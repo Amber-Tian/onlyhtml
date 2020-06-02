@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>heart</title>
+    <style>
+        @keyframes heart {
+            from {transform: scale(1) rotate(225deg);}
+            to {transform: scale(1.2) rotate(225deg);}
+        }
+        .heart {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            margin: 300px auto;
+            transform: rotate(225deg);
+            animation: heart .5s infinite alternate-reverse;
+        }
+        .heart::after, .heart::before {
+            background-color: red;
+            content: "";
+            display: block;
+            width: 200px;
+            height: 200px;
+        }
+        .heart::before {
+            border-radius: 0% 50% 50% 0%;
+            transform: translate(160px);
+        }
+        .heart::after {
+            border-radius: 0% 0% 50% 50%;
+            transform: translateY(-40px)
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+</body>
+</html>
